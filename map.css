@@ -1,0 +1,26 @@
+   /* css to style all the following elements*/
+   
+html,
+body,
+#mapDiv {
+ padding: 0;
+ margin: 0;
+ height: 100%;
+}
+
+.esriPopup.dark div.titleButton, 
+.esriPopup.dark div.titlePane .title,
+.esriPopup.dark div.actionsPane .action {
+color: #FF008F;
+}
+/* Additional customizations */
+.esriPopup.dark .esriPopupWrapper {
+border: none;
+}
+.esriPopup .contentPane {
+text-align: center;
+}
+.esriViewPopup .gallery {
+margin: 0 auto;
+}
+
