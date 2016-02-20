@@ -107,10 +107,8 @@ var map, dialog, query, queryTask, infoTemplate;
     })
     nation.infoTemplate = nationTemplate;
 
-
-    // map.addLayer(states);
+    map.addLayer(states);
     map.addLayer(nation);
-
 
     // connect.connect(map.infoWindow, "onMaximize", function() {
     //   console.log("popup Maximized");
@@ -122,21 +120,34 @@ var map, dialog, query, queryTask, infoTemplate;
       map.graphics.on("mouse-out", closeDialog);
     });
 
-    
+    map.on("zoom-end", function() {
+      if(map.getZoom() >= 5) {
+        if(map.graphicsLayerIds.length == 2) {
+          console.log("Remove Nation layer");
+          map.removeLayer(nation);
+        }
+      }
+      else {
+        if(map.graphicsLayerIds.length == 1) {
+          console.log("Add layer back in");
+          map.addLayer(nation);
+        }
+      }
+    });
             
     //listen for when the onMouseOver event fires on the countiesGraphicsLayer
     //when fired, create a new graphic with the geometry from the event.graphic and add it to the maps graphics layer
-    // states.on("mouse-over", function(evt){
-    //   var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
-    //   map.graphics.add(highlightGraphic);
-      
-    // });
-
-    nation.on("mouse-over", function(evt){
+    states.on("mouse-over", function(evt){
       var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
       map.graphics.add(highlightGraphic);
       
     });
+
+    nation.on("mouse-over", function(evt){
+      var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
+      map.graphics.add(highlightGraphic);
+    });
+
 
     function closeDialog() {
       map.graphics.clear();
