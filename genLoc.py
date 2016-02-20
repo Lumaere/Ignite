@@ -13,7 +13,7 @@ def attachLocation(summoner):
     #summoner["entry"] = requests.get(entryUrl).json()
 
 pageNum = 1
-for x in range(0,2):
+for x in range(0,30):
     url = "http://www.lolking.net/leaderboards/285ca6feadf6357d815b0d05c66caf11/na/"+str(pageNum)+".json"
     page = requests.get(url).json()["data"]
     #print (json.dumps(page))

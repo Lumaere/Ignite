@@ -6,6 +6,7 @@ var map, dialog, mp;
     "esri/dijit/PopupTemplate",
     "esri/layers/FeatureLayer", 
     "esri/tasks/query",
+    "esri/TimeExtent",
     "esri/symbols/SimpleFillSymbol", 
     "esri/symbols/SimpleLineSymbol", 
     "esri/renderers/SimpleRenderer", 
@@ -30,6 +31,7 @@ var map, dialog, mp;
     PopupTemplate,
     FeatureLayer, 
     query,
+    TimeExtent,
     SimpleFillSymbol, 
     SimpleLineSymbol,
     SimpleRenderer, 
@@ -172,23 +174,12 @@ var map, dialog, mp;
       // console.log(mp.x, mp.y);
       var closePeps = dataLarge.filter(isClose);
 
-
-
-      // forEach(function(person) {
-      //   // console.log(person["location"][0], person["location"][1]);
-      //   if(dist < min) {
-      //     min = dist;
-      //     minPerson = person;
-      //   }
-      // });
-
       console.log(closePeps);
     }
 
 
     function showCoordinates(evt) {
       mp = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
-      // console.log(mp);
     }
 
 
