@@ -172,7 +172,7 @@ var map, dialog, mp;
     function updateLeaderboard(evt) {
       // var minPerson = {}, min = 1e9;
       // console.log(mp.x, mp.y);
-      var closePeps = dataLarge.filter(isClose);
+      var closePeps = data.filter(isClose);
 
       console.log(closePeps);
     }
