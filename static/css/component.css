@@ -9,11 +9,12 @@ body {
 
 .morphsearch {
 	width: 200px;
-	min-height: 40px;
-	background: #f1f1f1;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #9013fe;
 	position: absolute;
-	z-index: 10000;
-	top: 50px;
+	z-index: 1000;
+	top: 205px;
 	right: 50px;
 	-webkit-transform-origin: 100% 0;
 	transform-origin: 100% 0;
@@ -217,17 +218,22 @@ input[type="search"] { /* reset normalize */
 }
 
 .dummy-column {
-	width: 30%;
+	width: 17%;
 	padding: 0 0 6em;
 	float: left;
 	opacity: 0;
+    text-align: center;
 	-webkit-transform: translate3d(0,100px,0);
 	transform: translateY(100px);
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
 	transition: transform 0.5s, opacity 0.5s;
 }
 
-.morphsearch.open .dummy-column:first-child {
+.dummy-header {
+    margin-top: 25px;
+}
+
+.morphsearch.open .:first-child {
 	-webkit-transition-delay: 0.4s;
 	transition-delay: 0.4s;
 }

@@ -20,11 +20,8 @@
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
   <!--Access the ArcGIS API for Javascript via the CDN. https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step2 .  The API is built on top of Dojo.  For more information check out: https://dojotoolkit.org/-->
   <link rel="stylesheet" href="css/map.css">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <script src="http://js.arcgis.com/3.14/"></script>
 
@@ -68,27 +65,41 @@
 <body class="claro">
     <div class="container">
         <div id="morphsearch" class="morphsearch">
-            <form class="morphsearch-form">
-                <input class="morphsearch-input" type="search" placeholder="Search..."/>
-                <button class="morphsearch-submit" type="submit">Search</button>
+            <form class="morphsearch-form inner-addon right-addon">
+                <i class="glyphicon glyphicon-search white"></i>
+                <input class="morphsearch-input" type="search"/>
+                <button class="morphsearch-submit" type="submit"></button>
             </form>
             <div class="morphsearch-content">
-                <div class="dummy-column">
-                    <h2>People</h2>
+                <div class="dummy-column dummy-header">
                     <a class="dummy-media-object" href="http://placehold.it/150x150">
                         <img class="round" src="http://placehold.it/150x150" alt="Sara Soueidan"/>
                         <h3>Sara Soueidan</h3>
                     </a>
                 </div>
                 <div class="dummy-column">
-                    <h2>Popular</h2>
+                    <h2>Name</h2>
                     <a class="dummy-media-object" href="http://placehold.it/150x150">
                         <img class="round" src="http://placehold.it/150x150" alt="Sara Soueidan"/>
                         <h3>Page Preloading Effect</h3>
                     </a>
                 </div>
                 <div class="dummy-column">
-                    <h2>Recent</h2>
+                    <h2>City, Country</h2>
+                    <a class="dummy-media-object" href="http://placehold.it/150x150">
+                        <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
+                        <h3>Tooltip Styles Inspiration</h3>
+                    </a>
+                </div>
+                <div class="dummy-column">
+                    <h2>Team</h2>
+                    <a class="dummy-media-object" href="http://placehold.it/150x150">
+                        <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
+                        <h3>Tooltip Styles Inspiration</h3>
+                    </a>
+                </div>
+                <div class="dummy-column">
+                    <h2>Ranking</h2>
                     <a class="dummy-media-object" href="http://placehold.it/150x150">
                         <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
                         <h3>Tooltip Styles Inspiration</h3>
@@ -113,6 +124,7 @@
 
             if( isOpen ) {
                 classie.remove( morphSearch, 'open' );
+                $('.white').show();
 
                 // trick to hide input text once the search overlay closes 
                 // todo: hardcoded times, should be done after transition ends
@@ -129,6 +141,7 @@
             }
             else {
                 classie.add( morphSearch, 'open' );
+                $('.white').hide()
             }
             isOpen = !isOpen;
         };
