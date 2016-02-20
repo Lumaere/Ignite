@@ -1,4 +1,4 @@
-var map, dialog, query, queryTask, infoTemplate;
+var map, dialog, mp;
 
   require([
     "esri/map", 
@@ -12,8 +12,10 @@ var map, dialog, query, queryTask, infoTemplate;
     "esri/graphic", 
     "esri/lang",
     "esri/Color", 
+    "esri/geometry/webMercatorUtils",
     "dojo/_base/connect",
     "dojo/number", 
+    "dojo/dom",
     "dojo/dom-style", 
     "dojo/dom-class",
     "dojo/dom-construct",
@@ -34,8 +36,10 @@ var map, dialog, query, queryTask, infoTemplate;
     Graphic, 
     esriLang,
     Color,
+    webMercatorUtils,
     connect,
     number, 
+    dom,
     domStyle, 
     domClass,
     domConstruct,
@@ -46,8 +50,9 @@ var map, dialog, query, queryTask, infoTemplate;
     map = new Map("mapDiv", {
       basemap: "dark-gray",
       center: [-80.94, 33.646],
-      zoom: 2,
-      slider: true
+      zoom: 3,
+      slider: true,
+      isDoubleClickZoom: true
     });
 
     var states_url = "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/5";
@@ -107,10 +112,9 @@ var map, dialog, query, queryTask, infoTemplate;
     })
     nation.infoTemplate = nationTemplate;
 
-
+    var nationOn = true;
     // map.addLayer(states);
     map.addLayer(nation);
-
 
     // connect.connect(map.infoWindow, "onMaximize", function() {
     //   console.log("popup Maximized");
@@ -120,23 +124,73 @@ var map, dialog, query, queryTask, infoTemplate;
     map.on("load", function(){
       map.graphics.enableMouseEvents();
       map.graphics.on("mouse-out", closeDialog);
+      map.on("mouse-up", updateLeaderboard);
+      map.on("mouse-move", showCoordinates);
+      // map.on("mouse-drag", showCoordinates);
     });
 
-    
+    map.on("zoom-end", function() {
+      if(map.getZoom() >= 5) {
+        if(nationOn) {
+          map.removeLayer(nation);
+          map.addLayer(states);
+          nationOn = false;
+        }
+      }
+      else {
+        if(!nationOn) {
+          map.removeLayer(states);
+          map.addLayer(nation);
+          nationOn = true;
+        }
+      }
+    });
             
     //listen for when the onMouseOver event fires on the countiesGraphicsLayer
     //when fired, create a new graphic with the geometry from the event.graphic and add it to the maps graphics layer
-    // states.on("mouse-over", function(evt){
-    //   var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
-    //   map.graphics.add(highlightGraphic);
-      
-    // });
-
-    nation.on("mouse-over", function(evt){
+    states.on("mouse-over", function(evt){
       var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
       map.graphics.add(highlightGraphic);
       
     });
+
+    nation.on("mouse-over", function(evt){
+      var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
+      map.graphics.add(highlightGraphic);
+    });
+
+
+    function isClose(val) {
+      // console.log(Math.max(5, 10));
+      var dist = Math.pow(val["location"][0] - mp.y, 2) + Math.pow(val["location"][1] - mp.x, 2); 
+      return dist <= Math.max(10 - map.getZoom(), 2);
+    }
+
+
+    function updateLeaderboard(evt) {
+      // var minPerson = {}, min = 1e9;
+      // console.log(mp.x, mp.y);
+      var closePeps = dataLarge.filter(isClose);
+
+
+
+      // forEach(function(person) {
+      //   // console.log(person["location"][0], person["location"][1]);
+      //   if(dist < min) {
+      //     min = dist;
+      //     minPerson = person;
+      //   }
+      // });
+
+      console.log(closePeps);
+    }
+
+
+    function showCoordinates(evt) {
+      mp = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
+      // console.log(mp);
+    }
+
 
     function closeDialog() {
       map.graphics.clear();
