@@ -23,4 +23,66 @@ text-align: center;
 .esriViewPopup .gallery {
 margin: 0 auto;
 }
+/**/
+.Ignite {
+  width: 176px;
+  height: 53px;
+  font-family: MANIFESTO;
+  font-size: 48px;
+  color: #ffffff;
+}
+/**/
+.World-Map {
+  width: 1440px;
+  height: 998px;
+}
+/**/
+.League-of-Legends {
+  width: 205px;
+  height: 32px;
+  font-family: Futura-Medium;
+  font-size: 24px;
+  color: #ffffff;
+}
+/**/
+.Rectangle-1 {
+  width: 1440px;
+  height: 1024px;
+  background-color: #000000;
+}
+/**/
+.Rectangle-3 {
+  width: 1440px;
+  height: 150px;
+  background-image: linear-gradient(to bottom, #d800ff, #ff008f);
+}
+/**/
+.Rectangle-7 {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #9013fe;
+}
+/*avatar image*/
+.Soundcloud-800x800 {
+  width: 75px;
+  height: 75px;
+}
+/**/
+.Close-Copy {
+  width: 10px;
+  height: 16.6px;
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg);
+  background-color: #ffffff;
+}
+/**/
+.Mask {
+  width: 75px;
+  height: 75px;
+  background-color: #d8d8d8;
+}
 
+#custom-navbar {
+  
+}

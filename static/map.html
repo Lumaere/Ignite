@@ -25,45 +25,41 @@
 
 </head>
 <!--Apply the claro css class to the html body-->
-  <header class ="navbar-inverse" role="banner">
-    <div class="container">
-    <nav role="navigation">
-    <div class="container-fluid">
+  <header id="custom-navbar" class ="navbar-inverse" role="banner">
+    <div>
+      <nav role="navigation">
+      <div>
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+          <div class="navbar-header">
+      
         <a class="navbar-brand" href="#" font-family="mainfesto" color="white">
-        Ignite</a>
-      </div>
+        <font size="6" color="white">Ignite</font></a>
+          </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">League of Legends <span class="caret"></span></a>
-
-            </ul>
-          </li>
-          <a href="{{ url_for('login') }}">log in</a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <ul class="nav navbar-nav">
+            <li> <a href="#" border="1px solid green">League of Legends</a></li>
         </ul>
+        <div class="row">
+          <div class="col-md-offset-12">
+            <ul class="nav navbar-nav">
+            <li> <img src="avatar.png" alt="theyungfaker" height="42" width="42"></li>
+        </ul>
+          </div>
+        </div>        
       </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        
     </nav>
   </header>
 <body class="claro">
 
   <!--a div to contain the map-->
   <div id="mapDiv">
-  <!-- <div class="btn-group" role="group"> -->
-    <!-- <button type="button" class="btn btn-default" style="padding-top:40%">Middle</button> -->
-  <!-- </div> -->
+
+  </div>
   </div>
 
 <!-- Latest compiled and minified JavaScript -->
