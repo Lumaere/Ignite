@@ -1,10 +1,10 @@
 
 Github repo. for MHacks 2016 Ignite project
 
-Christian Tanaka
-Nasir Kasuma
-David Latva
-Lawrence Wu
+Christian Tanaka  
+Nasir Kasuma  
+David Latva  
+Lawrence Wu  
 
 Technology involved:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Languages:  
