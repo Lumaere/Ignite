@@ -97,7 +97,7 @@ var map, dialog, mp;
 
     var template = new PopupTemplate({
       title: "{STATE_NAME}",
-      description: "Pop: {POP2007}"
+      description: "League Pop: {POP2007}"
     })
     map.infoWindow = popup;
     states.infoTemplate = template;

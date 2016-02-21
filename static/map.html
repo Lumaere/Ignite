@@ -156,7 +156,7 @@
           </div>
 
           <div class="row pad-bottom-small">
-            <button type="button" class="btn pink-search center-block pad-bottom-small" data-toggle="modal" data-target="#searchRegionModal" data-dismiss="modal">
+           <button type="button" class="btn pink-search center-block pad-bottom-small" data-toggle="modal" data-target="#searchRegionModal" data-dismiss="modal">
               Search
             </button>
           </div>
@@ -204,11 +204,10 @@
           </div>  
 
 
-
           <div class="row pad-bottom">
             <div class="col-xs-3 col-xs-offset-2">
-              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
-              <h5 class="white center">Username</h5> <br>
+              <img src="img/avatar.png" class="img-circle center-block"></img>
+              <h5 class="white center">CT</h5> <br>
               
             </div>
             <div class="col-xs-2">
@@ -218,8 +217,8 @@
             </div>
 
             <div class="col-xs-3">
-              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
-              <h5 class="white center">Username</h5> <br>
+              <img src="http://i.kinja-img.com/gawker-media/image/upload/f8ppuiexumhverizrxjn.jpg" class="img-circle center-block"></img>
+              <h5 class="white center">Faker</h5> <br>
             </div>
 
             <div class="col-xs-1">
@@ -227,7 +226,7 @@
           </div>
 
           <div class="row pad-bottom-small">
-            <button type="button" class="btn pink-search center-block">Return Home</button>
+          <button type="button" class="btn pink-search center-block" data-target="#" data-dismiss="modal">Return Home</button>
           </div>
         </div>
       </div>
@@ -241,7 +240,14 @@
 
 
 
-
+    <script type="text/javascript">
+      $(document).on("click", ".user-info", function() {
+        var personPicture = $(this).find("img").attr("src");
+        var personName = $(this).find(".col-xs-2")[1].childNodes[0];
+        // console.log(personPicture);
+        // console.log(personName);
+      });
+    </script>
 
 
 
@@ -262,7 +268,7 @@
           </div>
 
 
-          <div class="row pad-bottom-small white" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
+          <div class="row pad-bottom-small white user-info" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
             <div class="col-xs-2">
               <img src="http://i.kinja-img.com/gawker-media/image/upload/f8ppuiexumhverizrxjn.jpg" class="img-circle center-block good-image"></img>
             </div>
@@ -272,7 +278,7 @@
             <div class="col-xs-3"<p class="thin">1st in LCK</p></div>
           </div>
 
-          <div class="row pad-bottom-small white">
+          <div class="row pad-bottom-small white user-info" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
             <div class="col-xs-2">
               <img src="http://lol.esportspedia.com/w/images/8/84/Tsm_bjergsen.png" class="img-circle center-block good-image"></img>
             </div>
@@ -282,7 +288,7 @@
             <div class="col-xs-3"<p class="thin">1st in NA LCS</p></div>
           </div>
 
-          <div class="row pad-bottom-small white">
+          <div class="row pad-bottom-small white user-info" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
             <div class="col-xs-2">
               <img src="http://prod-content.azubu.tv.s3.amazonaws.com/wp-content/uploads/2014/04/Fnatic-Rekkles.png" class="img-circle center-block good-image"></img>
             </div>
@@ -292,7 +298,7 @@
             <div class="col-xs-3"<p class="thin">1st in EU LCS</p></div>
           </div>
           
-          <div class="row pad-bottom-small white">
+          <div class="row pad-bottom-small white user-info" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
             <div class="col-xs-2">
               <img src="http://riot-web-static.s3.amazonaws.com/images/news/April_2014/SKTP/bengi_forLoL.jpg" class="img-circle center-block good-image"></img>
             </div>
@@ -302,7 +308,7 @@
             <div class="col-xs-3"<p class="thin">2nd in LCK</p></div>
           </div>
 
-          <div class="row pad-bottom-small white">
+          <div class="row pad-bottom-small white user-info" data-target="#matchFoundModal" data-toggle="modal" data-dismiss="modal">
             <div class="col-xs-2">
               <img src="https://riot-web-static.s3.amazonaws.com/lolesports/2015Top20/04/player-clviyoewrnl.png" class="img-circle center-block good-image"></img>
             </div>
