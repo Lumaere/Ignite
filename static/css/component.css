@@ -11,7 +11,7 @@ body {
 	width: 200px;
 	height: 50px;
 	border-radius: 10px;
-	background-color: #9013fe;
+	background-color: #9013FE;
 	position: absolute;
 	z-index: 1000;
 	top: 205px;
@@ -27,6 +27,7 @@ body {
 }
 
 .morphsearch.open {
+	background-color: #20272B;
 	width: 100%;
 	min-height: 100%;
 	top: 0px;
@@ -202,7 +203,7 @@ input[type="search"] { /* reset normalize */
 	height: 0;
 	overflow: hidden;
 	padding: 0 10.5%;
-	background: #f1f1f1;
+	background: #263238;
 	position: absolute;
 	pointer-events: none;
 	opacity: 0;

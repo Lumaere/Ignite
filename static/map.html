@@ -20,11 +20,12 @@
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
   <!--Access the ArcGIS API for Javascript via the CDN. https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step2 .  The API is built on top of Dojo.  For more information check out: https://dojotoolkit.org/-->
   <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- <script src="js/bootstrap.min.js"></script> -->
 
   <script src="http://js.arcgis.com/3.14/"></script>
-
   <script src="js/data.js"></script>
   <script src="js/map.js"></script>
 
@@ -56,13 +57,206 @@
 
             </ul>
           </li>
-          <a href="{{ url_for('login') }}">log in</a>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
   </header>
 <body class="claro">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FIND OPPONENT MODAL -->
+    <button type="button" class="btn btn-lg bottom-mid" data-toggle="modal" data-target="#myModal">
+      Find Opponent
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="row">
+            <div class="col-xs-4">
+              <h3 class="white center">Friendly</h3> <br>
+              <img src="img/09_handshake_agreement.svg" class="img-circle pink center-block"></img>
+            </div>
+            <div class="col-xs-4">
+              <h3 class="white center">Competitive Training</h3>
+              <img src="img/14_sword_fighting.svg" class="img-circle gray center-block"></img>
+            </div>
+            <div class="col-xs-4">
+              <h3 class="white center">For Glory</h3> <br>
+              <img src="img/02_top_class_award.svg" class="img-circle gray center-block"></img>
+            </div>
+          </div>  
+
+          <div class="row">
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Region
+                <i class="glyphicon glyphicon-chevron-down white"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                State
+                <i class="glyphicon glyphicon-chevron-down white"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="row pad-bottom">
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Level
+                <i class="glyphicon glyphicon-chevron-down white"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Ranking
+                <i class="glyphicon glyphicon-chevron-down white"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn pink-search center-block pad-bottom-small">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MATCH IGNITED MODAL -->
+    <!-- <button type="button" class="btn" data-toggle="modal" data-target="#matchFoundModal">
+      Tester
+    </button> -->
+
+    <div class="modal fade" id="matchFoundModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="row">
+            <div class="col-xs-12">
+              <h3 class="white center">
+                Match has been ignited!
+              </h3>
+              <h3 class="white gray-text center pad-bottom">
+                Good luck!
+              </h3>
+            </div>
+          </div>  
+
+
+
+          <div class="row pad-bottom">
+            <div class="col-xs-3 col-xs-offset-2">
+              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
+              <h5 class="white center">Username</h5> <br>
+              
+            </div>
+            <div class="col-xs-2">
+              <h2 class="white center">
+                vs
+              </h2>
+            </div>
+
+            <div class="col-xs-3">
+              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
+              <h5 class="white center">Username</h5> <br>
+            </div>
+
+            <div class="col-xs-1">
+            </div>
+          </div>
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn pink-search center-block">Return Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container">
         <div id="morphsearch" class="morphsearch">
             <form class="morphsearch-form inner-addon right-addon">
@@ -71,45 +265,34 @@
                 <button class="morphsearch-submit" type="submit"></button>
             </form>
             <div class="morphsearch-content">
-                <div class="dummy-column dummy-header">
+                <div class="dummy-column">
+                    <h2></h2>
                     <a class="dummy-media-object" href="http://placehold.it/150x150">
                         <img class="round" src="http://placehold.it/150x150" alt="Sara Soueidan"/>
-                        <h3>Sara Soueidan</h3>
                     </a>
                 </div>
                 <div class="dummy-column">
                     <h2>Name</h2>
-                    <a class="dummy-media-object" href="http://placehold.it/150x150">
-                        <img class="round" src="http://placehold.it/150x150" alt="Sara Soueidan"/>
-                        <h3>Page Preloading Effect</h3>
-                    </a>
+                    <p>Page Preloading Effect</p>
                 </div>
                 <div class="dummy-column">
-                    <h2>City, Country</h2>
-                    <a class="dummy-media-object" href="http://placehold.it/150x150">
-                        <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
-                        <h3>Tooltip Styles Inspiration</h3>
-                    </a>
+                    <h2>Location</h2>
+                    <p>Tooltip Styles Inspiration</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Team</h2>
-                    <a class="dummy-media-object" href="http://placehold.it/150x150">
-                        <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
-                        <h3>Tooltip Styles Inspiration</h3>
-                    </a>
+                    <p>Tooltip Styles Inspiration</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Ranking</h2>
-                    <a class="dummy-media-object" href="http://placehold.it/150x150">
-                        <img src="http://placehold.it/150x150" alt="TooltipStylesInspiration"/>
-                        <h3>Tooltip Styles Inspiration</h3>
-                    </a>
+                    <p>Tooltip Styles Inspiration</p>
                 </div>
             </div><!-- /morphsearch-content -->
             <span class="morphsearch-close"></span>
         </div><!-- /morphsearch -->
         <div class="overlay"></div>
     </div><!-- /container -->
+
     <script src="js/classie.js"></script>
     <script>
 (function() {
@@ -161,7 +344,13 @@
 
     /***** for demo purposes only: don't allow to submit the form *****/
     morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+
+    // $('#myModal').data('bs.modal').$backdrop.css('background-color', "#9013FE")
+
 })();
+
+
+
     </script>
 
   <!--a div to contain the map-->
