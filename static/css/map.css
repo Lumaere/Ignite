@@ -24,3 +24,24 @@ text-align: center;
 margin: 0 auto;
 }
 
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+.right-addon .glyphicon {
+    right: 5px;
+    top: 3px;
+    font-size: 25px;
+}
+.right-addon input { padding-right: 30px; }
+
+.white {
+  color: #fff;
+}
