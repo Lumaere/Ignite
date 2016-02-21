@@ -54,7 +54,6 @@ var map, dialog, mp;
       center: [-80.94, 33.646],
       zoom: 3,
       slider: true,
-      sliderPosition: "bottom-right",
       isDoubleClickZoom: true
     });
 

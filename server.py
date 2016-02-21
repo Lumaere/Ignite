@@ -1,23 +1,38 @@
-from flask import Flask, request, url_for, redirect
+from flask import Flask, request, url_for, redirect, render_template
 from pprint import pprint
 
 app = Flask(__name__, static_url_path='')
+bigLoginObj = [ 
+    {
+        'username': 'admin',
+        'password': 'default'
+    },
+    {
+        'username': 'nimda',
+        'password': 'password'
+    }
+]
 
 @app.route('/')
 def serve():
     return app.send_static_file('map.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login')
 def login():
+    return render_template('login.html')
+
+
+@app.route('/authenticate', methods=['GET', 'POST'])
+def authenticate():
     error = None
     if request.method == 'POST':
         for user in bigLoginObj:
-            if user['username'] == request.form['username'] &&
-               user['password'] == request.form['password']:
-               return redirect(url_for('home'))
+            if user['username'] == request.form['username'] and user['password'] == request.form['password']:
+               return redirect(url_for('serve'))
         else:
             error = 'Invalid Credentials. Please try again.'
-    return redirect('login.html', error=error)
+    return render_template('login.html', error=error)
+
 
 
 

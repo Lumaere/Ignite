@@ -7,21 +7,27 @@
       on iOS devices-->
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
   <title>Ignite</title>
+
+  <script src="js/jquery-2.2.0.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+
   <!--Link to the claro style from underlying dojo toolkit.  For more info: https://dojotoolkit.org/reference-guide/1.10/dijit/themes.html-->
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
   <!-- Link to Esri css to style widgets, including the map.  More information at: https://developers.arcgis.com/javascript/jshelp/css.html -->
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
   <!--Access the ArcGIS API for Javascript via the CDN. https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step2 .  The API is built on top of Dojo.  For more information check out: https://dojotoolkit.org/-->
-  <link rel="stylesheet" href="map.css">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- <script src="js/bootstrap.min.js"></script> -->
 
   <script src="http://js.arcgis.com/3.14/"></script>
-  <script src="data.js"></script>
-  <script src="map.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/map.js"></script>
 
 </head>
 <!--Apply the claro css class to the html body-->
@@ -43,6 +49,10 @@
             <ul class="nav navbar-nav">
             <img class="League-of-Legends" class="col-sm-4" src="LoL.png" alt="LoLtext">
 
+
+            </ul>
+          </li>
+
         </ul>
         <div class="row">
           <div class="col-sm-4"> <!--col-md-offset-12-->
@@ -56,11 +66,372 @@
     </nav>
   </header>
 <body class="claro">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FIND OPPONENT MODAL -->
+    <button type="button" class="btn btn-lg bottom-mid" data-toggle="modal" data-target="#myModal">
+      Find Opponent
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="row" style="padding-top: 50px;">
+            <div class="col-xs-4">
+              <h3 class="white center thin">Friendly</h3> <br>
+              <img src="img/09_handshake_agreement.svg" class="img-circle pink center-block"></img>
+            </div>
+            <div class="col-xs-4">
+              <h3 class="white center thin">Competitive Training</h3>
+              <img src="img/14_sword_fighting.svg" class="img-circle gray center-block"></img>
+            </div>
+            <div class="col-xs-4">
+              <h3 class="white center thin">For Glory</h3> <br>
+              <img src="img/02_top_class_award.svg" class="img-circle gray center-block"></img>
+            </div>
+          </div>  
+
+          <div class="row">
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Region
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                State
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="row pad-bottom">
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Level
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 dropdown center-block">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Ranking
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn pink-search center-block pad-bottom-small" data-toggle="modal" data-target="#searchRegionModal" data-dismiss="modal">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MATCH IGNITED MODAL -->
+    <!-- <button type="button" class="btn" data-toggle="modal" data-target="#matchFoundModal">
+      Tester
+    </button> -->
+
+    <div class="modal fade" id="matchFoundModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="row">
+            <div class="col-xs-12">
+              <h3 class="white center">
+                Match has been ignited!
+              </h3>
+              <h3 class="white gray-text center pad-bottom">
+                Good luck!
+              </h3>
+            </div>
+          </div>  
+
+
+
+          <div class="row pad-bottom">
+            <div class="col-xs-3 col-xs-offset-2">
+              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
+              <h5 class="white center">Username</h5> <br>
+              
+            </div>
+            <div class="col-xs-2">
+              <h2 class="white center">
+                vs
+              </h2>
+            </div>
+
+            <div class="col-xs-3">
+              <img src="http://placehold.it/125x125/" class="img-circle center-block"></img>
+              <h5 class="white center">Username</h5> <br>
+            </div>
+
+            <div class="col-xs-1">
+            </div>
+          </div>
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn pink-search center-block">Return Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SEARCH REGION MODAL -->
+
+    <div class="modal fade make-dark" id="searchRegionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog make-darker" role="document">
+        <div class="modal-content">
+          <div class="row make-darker">
+            <div class="col-xs-2 white"></div>
+            <div class="col-xs-2 white"><h2>Name</h2></div>
+            <div class="col-xs-3 white"><h2>Location</h2></div>
+            <div class="col-xs-2 white"><h2>Team</h2></div>
+            <div class="col-xs-2 white"><h2>Ranking</h2></div>
+          </div>
+
+
+          <div class="row make-darker">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Faker</p></div>
+            <div class="col-xs-3 white"><p>Seoul, South Korea</p></div>
+            <div class="col-xs-2 white"><p>SK Telecom1</p></div>
+            <div class="col-xs-2 white"><p>1st in LCK</p</div>
+          </div>
+
+          <div class="row make-darker">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Bjergsen</p></div>
+            <div class="col-xs-3 white"><p>Los Angeles, USA</p></div>
+            <div class="col-xs-2 white"><p>Team SoloMid</p></div>
+            <div class="col-xs-2 white"><p>1st in NA LCS</p></div>
+          </div>
+
+          <div class="row make-darker pad-bottom-small">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Rekkles</p></div>
+            <div class="col-xs-3 white"><p>London, UK</p></div>
+            <div class="col-xs-2 white"><p>Fnatic</p></div>
+            <div class="col-xs-2 white"><p>1st in EU LCS</p></div>
+          </div>
+          
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn bottom-mid center-block">Return Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div id="morphsearch" class="morphsearch">
+            <form class="morphsearch-form inner-addon right-addon">
+                <i class="glyphicon glyphicon-search white"></i>
+                <input class="morphsearch-input" type="search"/>
+                <button class="morphsearch-submit" type="submit"></button>
+            </form>
+            <div class="morphsearch-content">
+                <div class="dummy-column">
+                    <h2></h2>
+                    <img class="round" src="http://placehold.it/50x50">
+                </div>
+                <div class="dummy-column">
+                    <h2>Name</h2>
+                    <p>Faker</p>
+                </div>
+                <div class="dummy-column">
+                    <h2>Location</h2>
+                    <p>Seoul, South Korea</p>
+                </div>
+                <div class="dummy-column">
+                    <h2>Team</h2>
+                    <p>SK Telecom1</p>
+                </div>
+                <div class="dummy-column">
+                    <h2>Ranking</h2>
+                    <p>1st in LCK</p>
+                </div>
+            </div><!-- /morphsearch-content -->
+            <span class="morphsearch-close"></span>
+        </div><!-- /morphsearch -->
+        <div class="overlay"></div>
+    </div><!-- /container -->
+
+    <script src="js/classie.js"></script>
+    <script>
+(function() {
+    var morphSearch = document.getElementById( 'morphsearch' ),
+        input = morphSearch.querySelector( 'input.morphsearch-input' ),
+        ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+        isOpen = isAnimating = false,
+        // show/hide search area
+        toggleSearch = function(evt) {
+            // return if open and the input gets focused
+            if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
+
+            if( isOpen ) {
+                classie.remove( morphSearch, 'open' );
+                $('.white').show();
+
+                // trick to hide input text once the search overlay closes 
+                // todo: hardcoded times, should be done after transition ends
+                if( input.value !== '' ) {
+                    setTimeout(function() {
+                        classie.add( morphSearch, 'hideInput' );
+                        setTimeout(function() {
+                            classie.remove( morphSearch, 'hideInput' );
+                            input.value = '';
+                        }, 300 );
+                    }, 500);
+                }
+                input.blur();
+            }
+            else {
+                classie.add( morphSearch, 'open' );
+                $('.white').hide()
+            }
+            isOpen = !isOpen;
+        };
+
+    // events
+    input.addEventListener( 'focus', toggleSearch );
+    ctrlClose.addEventListener( 'click', toggleSearch );
+    // esc key closes search overlay
+    // keyboard navigation events
+    document.addEventListener( 'keydown', function( ev ) {
+        var keyCode = ev.keyCode || ev.which;
+        if( keyCode === 27 && isOpen ) {
+            toggleSearch(ev);
+        }
+    } );
+
+
+    /***** for demo purposes only: don't allow to submit the form *****/
+    morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+
+    // $('#myModal').data('bs.modal').$backdrop.css('background-color', "#9013FE")
+
+})();
+
+
+
+    </script>
 
   <!--a div to contain the map-->
   <div id="mapDiv">
+<<<<<<< HEAD
 
   </div>
+=======
+>>>>>>> c6ec290b6bff59e306b0892a95b5741863b2bda6
   </div>
 
 <!-- Latest compiled and minified JavaScript -->
