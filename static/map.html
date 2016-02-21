@@ -37,13 +37,13 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> -->
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" font-family="mainfesto" color="white">
+        <a class="navbar-brand" href="#" font-family="manifesto" color="white">
         Ignite</a>
       </div>
 
@@ -88,26 +88,26 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
-          <div class="row">
+          <div class="row" style="padding-top: 50px;">
             <div class="col-xs-4">
-              <h3 class="white center">Friendly</h3> <br>
+              <h3 class="white center thin">Friendly</h3> <br>
               <img src="img/09_handshake_agreement.svg" class="img-circle pink center-block"></img>
             </div>
             <div class="col-xs-4">
-              <h3 class="white center">Competitive Training</h3>
+              <h3 class="white center thin">Competitive Training</h3>
               <img src="img/14_sword_fighting.svg" class="img-circle gray center-block"></img>
             </div>
             <div class="col-xs-4">
-              <h3 class="white center">For Glory</h3> <br>
+              <h3 class="white center thin">For Glory</h3> <br>
               <img src="img/02_top_class_award.svg" class="img-circle gray center-block"></img>
             </div>
           </div>  
 
           <div class="row">
             <div class="col-xs-6 dropdown center-block">
-              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Region
-                <i class="glyphicon glyphicon-chevron-down white"></i>
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Action</a></li>
@@ -118,9 +118,9 @@
               </ul>
             </div>
             <div class="col-xs-6 dropdown center-block">
-              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 State
-                <i class="glyphicon glyphicon-chevron-down white"></i>
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Action</a></li>
@@ -135,9 +135,9 @@
 
           <div class="row pad-bottom">
             <div class="col-xs-6 dropdown center-block">
-              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Level
-                <i class="glyphicon glyphicon-chevron-down white"></i>
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Action</a></li>
@@ -148,9 +148,9 @@
               </ul>
             </div>
             <div class="col-xs-6 dropdown center-block">
-              <button class="btn btn-default dropdown-toggle ignite-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn btn-default dropdown-toggle ignite-toggle thin" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Ranking
-                <i class="glyphicon glyphicon-chevron-down white"></i>
+                <i class="glyphicon glyphicon-chevron-down white thin"></i>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Action</a></li>
@@ -163,7 +163,9 @@
           </div>
 
           <div class="row pad-bottom-small">
-            <button type="button" class="btn pink-search center-block pad-bottom-small">Search</button>
+            <button type="button" class="btn pink-search center-block pad-bottom-small" data-toggle="modal" data-target="#searchRegionModal" data-dismiss="modal">
+              Search
+            </button>
           </div>
         </div>
       </div>
@@ -253,6 +255,75 @@
 
 
 
+    <!-- SEARCH REGION MODAL -->
+
+    <div class="modal fade make-dark" id="searchRegionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog make-darker" role="document">
+        <div class="modal-content">
+          <div class="row make-darker">
+            <div class="col-xs-2 white"></div>
+            <div class="col-xs-2 white"><h2>Name</h2></div>
+            <div class="col-xs-3 white"><h2>Location</h2></div>
+            <div class="col-xs-2 white"><h2>Team</h2></div>
+            <div class="col-xs-2 white"><h2>Ranking</h2></div>
+          </div>
+
+
+          <div class="row make-darker">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Faker</p></div>
+            <div class="col-xs-3 white"><p>Seoul, South Korea</p></div>
+            <div class="col-xs-2 white"><p>SK Telecom1</p></div>
+            <div class="col-xs-2 white"><p>1st in LCK</p</div>
+          </div>
+
+          <div class="row make-darker">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Bjergsen</p></div>
+            <div class="col-xs-3 white"><p>Los Angeles, USA</p></div>
+            <div class="col-xs-2 white"><p>Team SoloMid</p></div>
+            <div class="col-xs-2 white"><p>1st in NA LCS</p></div>
+          </div>
+
+          <div class="row make-darker pad-bottom-small">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block"></img>
+            </div>
+            <div class="col-xs-3 white"><p>Rekkles</p></div>
+            <div class="col-xs-3 white"><p>London, UK</p></div>
+            <div class="col-xs-2 white"><p>Fnatic</p></div>
+            <div class="col-xs-2 white"><p>1st in EU LCS</p></div>
+          </div>
+          
+
+          <div class="row pad-bottom-small">
+            <button type="button" class="btn bottom-mid center-block">Return Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -267,25 +338,23 @@
             <div class="morphsearch-content">
                 <div class="dummy-column">
                     <h2></h2>
-                    <a class="dummy-media-object" href="http://placehold.it/150x150">
-                        <img class="round" src="http://placehold.it/150x150" alt="Sara Soueidan"/>
-                    </a>
+                    <img class="round" src="http://placehold.it/50x50">
                 </div>
                 <div class="dummy-column">
                     <h2>Name</h2>
-                    <p>Page Preloading Effect</p>
+                    <p>Faker</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Location</h2>
-                    <p>Tooltip Styles Inspiration</p>
+                    <p>Seoul, South Korea</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Team</h2>
-                    <p>Tooltip Styles Inspiration</p>
+                    <p>SK Telecom1</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Ranking</h2>
-                    <p>Tooltip Styles Inspiration</p>
+                    <p>1st in LCK</p>
                 </div>
             </div><!-- /morphsearch-content -->
             <span class="morphsearch-close"></span>
