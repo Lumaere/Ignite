@@ -1,12 +1,11 @@
 var map, dialog, mp;
+define.amd.jQuery = true; 
 
   require([
     "esri/map", 
     "esri/dijit/Popup",
     "esri/dijit/PopupTemplate",
     "esri/layers/FeatureLayer", 
-    "esri/tasks/query",
-    "esri/TimeExtent",
     "esri/symbols/SimpleFillSymbol", 
     "esri/symbols/SimpleLineSymbol", 
     "esri/renderers/SimpleRenderer", 
@@ -15,7 +14,6 @@ var map, dialog, mp;
     "esri/Color", 
     "esri/geometry/webMercatorUtils",
     "dojo/_base/connect",
-    "dojo/number", 
     "dojo/dom",
     "dojo/dom-style", 
     "dojo/dom-class",
@@ -30,8 +28,6 @@ var map, dialog, mp;
     Popup,
     PopupTemplate,
     FeatureLayer, 
-    query,
-    TimeExtent,
     SimpleFillSymbol, 
     SimpleLineSymbol,
     SimpleRenderer, 
@@ -40,12 +36,11 @@ var map, dialog, mp;
     Color,
     webMercatorUtils,
     connect,
-    number, 
     dom,
     domStyle, 
     domClass,
     domConstruct,
-    TooltipDialog, 
+    TooltipDialog,
     dijitPopup
   ) {
 
@@ -118,9 +113,6 @@ var map, dialog, mp;
     // map.addLayer(states);
     map.addLayer(nation);
 
-    // connect.connect(map.infoWindow, "onMaximize", function() {
-    //   console.log("popup Maximized");
-    // });
 
     //close the dialog when the mouse leaves the highlight graphic
     map.on("load", function(){

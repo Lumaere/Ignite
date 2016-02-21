@@ -38,7 +38,7 @@ def authenticate():
 
 if __name__ == '__main__':
     app.run(
-        debug = True,
+        # debug = True,
         host="localhost",
         port=int("8000")
     )
