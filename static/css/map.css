@@ -25,72 +25,34 @@ text-align: center;
 .esriViewPopup .gallery {
 margin: 0 auto;
 }
-/**/
-.Ignite {
-  width: 176px;
-  height: 53px;
-  font-family: MANIFESTO;
-  font-size: 48px;
-  color: #ffffff;
-}
-/**/
-.World-Map {
-  width: 1440px;
-  height: 998px;
-}
+
+
+
 /**/
 .League-of-Legends {
-  margin-top:20%;
-  margin-bottom:10%;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*margin-top:20%;*/
+    /*margin-bottom:10%;*/
+    position: absolute;
+    left: ;
+}
 
-}
-/**/
-.Rectangle-1 {
-  width: 1440px;
-  height: 1024px;
-  background-color: #000000;
-}
-/**/
-.Rectangle-3 {
-  width: 1440px;
-  height: 150px;
-  background-image: linear-gradient(to bottom, #d800ff, #ff008f);
-}
-/**/
-.Rectangle-7 {
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: #9013fe;
-}
 /*avatar image*/
 .Soundcloud-800x800 {
-  width: 50px;
-  height: 50px;
-  margin-left:1000%;
-  margin-top:40%;
-  margin-bottom:5%;
+    width: 50px;
+    height: 50px;
+    float: right;
+    /*margin-left:1000%;*/
+    margin-top:40%;
+    margin-bottom:5%;
 }
-/**/
-.Close-Copy {
-  width: 10px;
-  height: 16.6px;
-  -webkit-transform: rotate(-270deg);
-  transform: rotate(-270deg);
-  background-color: #ffffff;
-}
-/**/
-.Mask {
-  width: 75px;
-  height: 75px;
-  background-color: #d8d8d8;
-}
-.Ignitelogo{
-max-width:20%;
-margin-top:5%;
-margin-left:5%;
-margin-bottom:5%;
 
+.Ignitelogo{
+    width: 35%;
+    margin-top:5%;
+    margin-left:5%;
+    margin-bottom:5%;
 }
 
 #custom-navbar {
@@ -99,6 +61,10 @@ margin-bottom:5%;
   background-image:linear-gradient(to bottom, #d800ff, #ff008f);
   color: #ffffff;
 }
+
+
+
+
 
 
 .esriPopup.dark div.titleButton, 
@@ -120,9 +86,13 @@ margin: 0 auto;
 
 
 
+.moveModalDown {
+    margin-top: 150px;
+}
 
-
-
+.makeModalBig {
+    width: 1200px;
+}
 
 
 /* enable absolute positioning */
@@ -233,8 +203,16 @@ margin: 0 auto;
     background-color: #20272B;
 }
 
+.modal-xl {
+    width: 90%;
+    max-width:1200px;
+}
 
 
+.good-image {
+    width: 50px !important;
+    height: 50px !important;
+}
 
 
 

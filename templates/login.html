@@ -1,15 +1,29 @@
-<html> 
-  <h2>Login</h2>
-  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
-  <form action="{{ url_for('authenticate') }}" method=post>
-    <dl>
-      <dt>Username:</dt>
-      <dd><input type=text name=username></dd>
-      <dt>Password:</dt>
-      <dd><input type=password name=password></dd>
-      <dd><input type=submit value=Login></dd>
-    </dl>
-  </form>
-  </p>
-</html>
+<!DOCTYPE html>
+<title>Ignite Login</title>
+<link rel=stylesheet href="css/login.css">
 
+<header id="custom-navbar" role="banner"> 
+    <nav role="navigation">
+      <div class="navbar-header">
+        <img class="Ignitelogo" src="img/Ignite.png" alt="ignitelogo">
+      </div>
+    </nav>
+  </header>
+
+<html>
+  <body>
+
+  <div class="page"> 
+    <h2>Login</h2>
+    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}</p>
+    <form class="white" action="{{ url_for('authenticate') }}" method=post>
+      <dl>
+        <dd><input type=text placeholder="username" name=username></dd>
+        <dd><input type=password placeholder="password" name=password></dd>
+        <dd><input type=submit style="position: absolute; left: -9999px"></dd>
+      </dl>
+    </form>
+  </div>
+
+  </body>
+</html>

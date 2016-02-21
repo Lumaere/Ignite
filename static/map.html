@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,90 +9,75 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
   <title>Ignite</title>
 
-  <script src="js/jquery-2.2.0.js"></script>
-  <script type="text/javascript">
-    define.amd.jQuery = true;
-  </script>
-  <!-- <script defer type="text/javascript" src="js/map.js"></script> -->
-  
 
-  <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:100,700,800' rel='stylesheet' type='text/css'> -->
-  <!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" /> -->
   <link rel="stylesheet" type="text/css" href="css/component.css" />
 
-  <!--Link to the claro style from underlying dojo toolkit.  For more info: https://dojotoolkit.org/reference-guide/1.10/dijit/themes.html-->
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
-  <!-- Link to Esri css to style widgets, including the map.  More information at: https://developers.arcgis.com/javascript/jshelp/css.html -->
   <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
-  <!--Access the ArcGIS API for Javascript via the CDN. https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step2 .  The API is built on top of Dojo.  For more information check out: https://dojotoolkit.org/-->
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+  <script src="js/jquery-2.2.0.js"></script>
+  
   <script src="http://js.arcgis.com/3.14/"></script>
+  <script type="text/javascript">
+    define.amd.jQuery = true;
+  </script>
+  <script src="js/map.js"></script>
+
+
   <script src="js/bootstrap.min.js"></script>
 
+
   
-  <script src="js/map.js"></script>
+
+  
   <script src="js/data.js"></script>
 
   
 
 </head>
+
+
 <!--Apply the claro css class to the html body-->
-  <header class ="navbar-inverse" role="banner">
-    <div class="container">
+  <header id="custom-navbar" role="banner"> 
     <nav role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#" font-family="manifesto" color="white">
-        Ignite</a>
+        <img class="Ignitelogo" src="img/Ignite.png" alt="ignitelogo">
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">League of Legends <span class="caret"></span></a>
-
-            </ul>
+      <div class="collapse navbar-collapse">
+        <ul class = "nav navbar-nav">
+          <li>
+            <img class="League-of-Legends" src="img/LoL.png" alt="LoLtext">
+          </li>
+          <li>
+            <img class="Soundcloud-800x800" src="img/avatar.png" alt="theyungfaker" height="42" width="42">
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
     </nav>
   </header>
+
+
+
+
+
+
+
+
+
+
 <body class="claro">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- FIND OPPONENT MODAL -->
     <button type="button" class="btn btn-lg bottom-mid" data-toggle="modal" data-target="#myModal">
       Find Opponent
     </button>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade moveModalDown" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
@@ -265,51 +250,72 @@
 
     <!-- SEARCH REGION MODAL -->
 
-    <div class="modal modal-fullscreen fade make-dark" id="searchRegionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog make-darker" role="document">
+    <div class="modal fade moveModalDown" id="searchRegionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-          <div class="row make-darker">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-2"><h2>Name</h2></div>
-            <div class="col-xs-3"><h2>Location</h2></div>
-            <div class="col-xs-2"><h2>Team</h2></div>
-            <div class="col-xs-2"><h2>Ranking</h2></div>
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-2"><h2 class="thin">Name</h2></div>
+            <div class="col-xs-3"><h2 class="thin">Location</h2></div>
+            <div class="col-xs-2"><h2 class="thin">Team</h2></div>
+            <div class="col-xs-3"><h2 class="thin">Ranking</h2></div>
           </div>
 
 
-          <div class="row make-darker">
-            <div class="col-xs-3">
-              <img src="http://placehold.it/50x50/" class="img-circle center-block"></img>
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block good-image"></img>
             </div>
-            <div class="col-xs-2"><h2>Faker</h2></div>
-            <div class="col-xs-3"><h2>Seoul, South Korea</h2></div>
-            <div class="col-xs-2"><h2>SK Telecom1</h2></div>
-            <div class="col-xs-2"><h2>1st in LCK</h2></div>
+            <div class="col-xs-2"<p class="thin">Faker</p></div>
+            <div class="col-xs-3"<p class="thin">Seoul, South Korea</p></div>
+            <div class="col-xs-2"<p class="thin">SK Telecom1</p></div>
+            <div class="col-xs-3"<p class="thin">1st in LCK</p></div>
           </div>
 
-          <div class="row make-darker">
-            <div class="col-xs-3">
-              <img src="http://placehold.it/50x50/" class="img-circle center-block"></img>
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block good-image"></img>
             </div>
-            <div class="col-xs-2"><h2>Bjergsen</h2></div>
-            <div class="col-xs-3"><h2>Los Angeles, USA</h2></div>
-            <div class="col-xs-2"><h2>Team SoloMid</h2></div>
-            <div class="col-xs-2"><h2>1st in NA LCS</h2></div>
+            <div class="col-xs-2"<p class="thin">Bjergsen</p></div>
+            <div class="col-xs-3"<p class="thin">Los Angeles, USA</p></div>
+            <div class="col-xs-2"<p class="thin">Team SoloMid</p></div>
+            <div class="col-xs-3"<p class="thin">1st in NA LCS</p></div>
           </div>
 
-          <div class="row make-darker pad-bottom-small">
-            <div class="col-xs-3">
-              <img src="http://placehold.it/50x50/" class="img-circle center-block"></img>
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block good-image"></img>
             </div>
-            <div class="col-xs-2"><h2>Rekkles</h2></div>
-            <div class="col-xs-3"><h2>London, UK</h2></div>
-            <div class="col-xs-2"><h2>Fnatic</h2></div>
-            <div class="col-xs-2"><h2>1st in EU LCS</h2></div>
+            <div class="col-xs-2"<p class="thin">Rekkles</p></div>
+            <div class="col-xs-3"<p class="thin">London, UK</p></div>
+            <div class="col-xs-2"<p class="thin">Fnatic</p></div>
+            <div class="col-xs-3"<p class="thin">1st in EU LCS</p></div>
           </div>
           
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block good-image"></img>
+            </div>
+            <div class="col-xs-2"<p class="thin">Bengi</p></div>
+            <div class="col-xs-3"<p class="thin">Seoul, S. Korea</p></div>
+            <div class="col-xs-2"<p class="thin">SK Telecom1</p></div>
+            <div class="col-xs-3"<p class="thin">2nd in LCK</p></div>
+          </div>
+
+          <div class="row pad-bottom-small white">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/20x20/" class="img-circle center-block good-image"></img>
+            </div>
+            <div class="col-xs-2"<p class="thin">Kakao</p></div>
+            <div class="col-xs-3"<p class="thin">China</p></div>
+            <div class="col-xs-2"<p class="thin">KT Rollster</p></div>
+            <div class="col-xs-3"<p class="thin">1st in LPO</p></div>
+          </div>
 
           <div class="row pad-bottom-small">
-            <button type="button" class="btn bottom-mid center-block">Return Home</button>
+            <button type="button" class="btn pink-search center-block pad-bottom-small" data-toggle="modal" data-target="#myModal" data-dismiss="modal">
+              New Search
+            </button>
           </div>
         </div>
       </div>
@@ -350,19 +356,19 @@
                 </div>
                 <div class="dummy-column">
                     <h2>Name</h2>
-                    <p>Faker</p>
+                   <p class="thin">Faker</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Location</h2>
-                    <p>Seoul, South Korea</p>
+                   <p class="thin">Seoul, South Korea</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Team</h2>
-                    <p>SK Telecom1</p>
+                   <p class="thin">SK Telecom1</p>
                 </div>
                 <div class="dummy-column">
                     <h2>Ranking</h2>
-                    <p>1st in LCK</p>
+                   <p class="thin">1st in LCK</p>
                 </div>
             </div><!-- /morphsearch-content -->
             <span class="morphsearch-close"></span>

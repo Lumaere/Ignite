@@ -30,7 +30,7 @@ def authenticate():
             if user['username'] == request.form['username'] and user['password'] == request.form['password']:
                return redirect(url_for('serve'))
         else:
-            error = 'Invalid Credentials. Please try again.'
+            error = ''
     return render_template('login.html', error=error)
 
 
@@ -38,7 +38,7 @@ def authenticate():
 
 if __name__ == '__main__':
     app.run(
-        # debug = True,
+        debug = True,
         host="localhost",
         port=int("8000")
     )

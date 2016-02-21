@@ -1,0 +1,50 @@
+a, h1, h2       { color: #FFFFFF; }
+h1, h2          { font-family: 'futura', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+.page { 
+    margin: 2em auto; 
+    width: 35em; 
+    border: 5px solid #FF00F0; 
+    padding: 0.8em; 
+    background: #20272B; 
+}
+/*.entries        { list-style: none; margin: 0; padding: 0; }*/
+/*.entries li     { margin: 0.8em 1.2em; }*/
+/*.entries li h2  { margin-left: -1em; }*/
+/*.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }*/
+/*.add-entry dl   { font-weight: bold; }*/
+/*.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }*/
+
+.Ignitelogo{
+    width: 35%;
+    margin-top:5%;
+    margin-left:5%;
+    margin-bottom:5%;
+}
+
+body {
+    font-family: futura;
+    background-color: #263238;
+}
+
+dt dd dl form{
+    color: #FFFFFF;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+#custom-navbar {
+  z-index:2;
+  background-color: rgb(255,0,143);
+  background-image:linear-gradient(to bottom, #d800ff, #ff008f);
+  color: #ffffff;
+}
+

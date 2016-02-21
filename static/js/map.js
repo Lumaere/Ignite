@@ -1,5 +1,5 @@
 var map, dialog, mp;
-define.amd.jQuery = true; 
+// define.amd.jQuery = true; 
 
   require([
     "esri/map", 
@@ -13,7 +13,7 @@ define.amd.jQuery = true;
     "esri/lang",
     "esri/Color", 
     "esri/geometry/webMercatorUtils",
-    "dojo/_base/connect",
+    // "dojo/_base/connect",
     "dojo/dom",
     "dojo/dom-style", 
     "dojo/dom-class",
@@ -35,7 +35,7 @@ define.amd.jQuery = true;
     esriLang,
     Color,
     webMercatorUtils,
-    connect,
+    // connect,
     dom,
     domStyle, 
     domClass,
