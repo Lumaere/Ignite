@@ -25,10 +25,21 @@ margin: 0 auto;
 }
 
 
+/*#searchRegionModal {
+    width: 100% !important;
+    height: 100% !important;
+}
 
 
+#searchRegionModal .modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+}
 
-
+#searchRegionModal .modal-content {
+    width: 100% !important;
+    height: 100% !important;
+}*/
 
 
 
@@ -139,4 +150,9 @@ margin: 0 auto;
 .make-darker {
     background-color: #20272B;
 }
+
+
+
+
+
 
