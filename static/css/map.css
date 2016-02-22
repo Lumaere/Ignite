@@ -211,11 +211,33 @@ margin: 0 auto;
     max-width:1200px;
 }
 
-
 .good-image {
-    width: 50px !important;
-    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    /*width: 100% !important;*/
+    /*height: 100% !important;*/
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    max-height: 50px !important;
+    max-width: 50px !important;
+    /*width: 50px !important;*/
+    /*height: 50px !important;*/
 }
 
+.search-stuff {
+    background-color: #263238;
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.bold {
+    /*font-size: 20px;*/
+    /*font-weight: bold;*/
+    letter-spacing: 1px;
+    color: #FF00F0;
+}
 
 

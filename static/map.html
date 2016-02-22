@@ -27,15 +27,8 @@
     define.amd.jQuery = true;
   </script>
   <script src="js/map.js"></script>
-
-
   <script src="js/bootstrap.min.js"></script>
-
-
-  
-
-  
-  <script src="js/data.js"></script>
+  <script src="js/newData.js"></script>
 
   
 
@@ -426,11 +419,11 @@
         <div id="morphsearch" class="morphsearch">
             <form class="morphsearch-form inner-addon right-addon">
                 <i class="glyphicon glyphicon-search white"></i>
-                <input class="morphsearch-input" type="search"/>
+                <input class="morphsearch-input" type="search" id="searchTxt"/>
                 <button class="morphsearch-submit" type="submit"></button>
             </form>
             <div class="morphsearch-content">
-                <div class="dummy-column">
+                <!-- <div class="dummy-column">
                     <h2></h2>
                     <img class="round img-circle good-image" src="http://i.kinja-img.com/gawker-media/image/upload/f8ppuiexumhverizrxjn.jpg">
                 </div>
@@ -449,7 +442,7 @@
                 <div class="dummy-column">
                     <h2>Ranking</h2>
                    <p class="thin">1st in LCK</p>
-                </div>
+                </div> -->
             </div><!-- /morphsearch-content -->
             <span class="morphsearch-close"></span>
         </div><!-- /morphsearch -->
@@ -458,59 +451,102 @@
 
     <script src="js/classie.js"></script>
     <script>
-(function() {
-    var morphSearch = document.getElementById( 'morphsearch' ),
-        input = morphSearch.querySelector( 'input.morphsearch-input' ),
-        ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
-        isOpen = isAnimating = false,
-        // show/hide search area
-        toggleSearch = function(evt) {
-            // return if open and the input gets focused
-            if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
+    (function() {
+        var morphSearch = document.getElementById( 'morphsearch' ),
+            input = morphSearch.querySelector( 'input.morphsearch-input' ),
+            ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+            isOpen = isAnimating = false,
+            // show/hide search area
+            toggleSearch = function(evt) {
+                // return if open and the input gets focused
+                if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
 
-            if( isOpen ) {
-                classie.remove( morphSearch, 'open' );
-                $('.white').show();
+                if( isOpen ) {
+                    classie.remove( morphSearch, 'open' );
+                    $('.white').show();
 
-                // trick to hide input text once the search overlay closes 
-                // todo: hardcoded times, should be done after transition ends
-                if( input.value !== '' ) {
-                    setTimeout(function() {
-                        classie.add( morphSearch, 'hideInput' );
+                    // trick to hide input text once the search overlay closes 
+                    // todo: hardcoded times, should be done after transition ends
+                    if( input.value !== '' ) {
                         setTimeout(function() {
-                            classie.remove( morphSearch, 'hideInput' );
-                            input.value = '';
-                        }, 300 );
-                    }, 500);
+                            classie.add( morphSearch, 'hideInput' );
+                            setTimeout(function() {
+                                classie.remove( morphSearch, 'hideInput' );
+                                input.value = '';
+                            }, 300 );
+                        }, 500);
+                    }
+                    input.blur();
                 }
-                input.blur();
+                else {
+                    classie.add( morphSearch, 'open' );
+                    $('.white').hide();
+                }
+                isOpen = !isOpen;
+            };
+
+        // events
+        input.addEventListener( 'focus', toggleSearch );
+        ctrlClose.addEventListener( 'click', toggleSearch );
+
+
+        // esc key closes search overlay
+        // keyboard navigation events
+        document.addEventListener( 'keydown', function( ev ) {
+            var keyCode = ev.keyCode || ev.which;
+            if( keyCode === 27 && isOpen ) {
+                toggleSearch(ev);
             }
-            else {
-                classie.add( morphSearch, 'open' );
-                $('.white').hide();
+        } );  
+
+        input.addEventListener( 'keyup', function(letter) {
+          var key = letter.keyCode || letter.which;
+          if (isOpen) {
+              console.log("find data that matches")
+              var matches = [];
+              var term = $('#searchTxt').val();
+              if(term != '') {
+                term = term.toLowerCase();
+                for (var i = 0; i < data.length; i++) 
+                  if (~data[i]['name'].toLocaleLowerCase().indexOf(term)) {
+                    console.log(data[i]['name']);
+                    matches.push(i);
+                  }
+              }
+
+              if(matches.length > 0 || term == '') {
+                console.log(matches);
+                $(".morphsearch-content").find(".search-stuff").remove();
+                if(matches.length > 0)
+                $("<div class='row search-stuff'>" +
+                    "<div class='col-xs-2' style='margin-left: 25px'><h3 class='bold' style='z-index: 20; margin-top: 10px'>Picture</h3></div>" + 
+                    "<div class='col-xs-3' style='margin-left: 35px'><h3 class='bold' style='z-index: 20; margin-top: 10px'>Summoner Name</h3></div>" +
+                    "<div class='col-xs-2' style='margin-left: 80px'><h3 class='bold' style='z-index: 20; margin-top: 10px'>Tier</h3></div>" + 
+                    "<div class='col-xs-3'><h3 class='bold' style='z-index: 20; margin-top: 10px'>Global Ranking</h3></div>" +
+                  "</div>").appendTo(".morphsearch-content");
+
+                
+                matches.forEach(function(ele) {
+                  $("<div class='row search-stuff'>" +
+                      "<img class='round good-image col-xs-1' style='margin-left: 100px;' src=" + data[ele]['picture']['thumbnail'] + ">" + 
+                      "<div class='col-xs-5'><p class='thin white' style='z-index: 20; margin-top: 10px'>" + data[ele]['name'] + "</p></div>" +
+                      "<div class='col-xs-2'><p class='thin white' style='z-index: 20; margin-top: 10px'>" + data[ele]['tier_name'] + "</p></div>" + 
+                      "<div class='col-xs-3'><p class='thin white' style='z-index: 20; margin-top: 10px'>" + data[ele]['global_ranking'] + "</p></div>" +
+                    "</div>").appendTo(".morphsearch-content");
+                  // $("<div class='search-stuff white' style='z-index: 5000'>" + ele + "</div>").appendTo(".morphsearch-content");
+                })
+
+              }
             }
-            isOpen = !isOpen;
-        };
-
-    // events
-    input.addEventListener( 'focus', toggleSearch );
-    ctrlClose.addEventListener( 'click', toggleSearch );
-    // esc key closes search overlay
-    // keyboard navigation events
-    document.addEventListener( 'keydown', function( ev ) {
-        var keyCode = ev.keyCode || ev.which;
-        if( keyCode === 27 && isOpen ) {
-            toggleSearch(ev);
-        }
-    } );
+        })
 
 
-    /***** for demo purposes only: don't allow to submit the form *****/
-    morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+        /***** for demo purposes only: don't allow to submit the form *****/
+        morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
 
-    // $('#myModal').data('bs.modal').$backdrop.css('background-color', "#9013FE")
+        // $('#myModal').data('bs.modal').$backdrop.css('background-color', "#9013FE")
 
-})();
+    })();
 
 
 
@@ -519,9 +555,6 @@
   <!--a div to contain the map-->
   <div id="mapDiv">
   </div>
-
-<!-- Latest compiled and minified JavaScript -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

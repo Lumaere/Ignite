@@ -1,4 +1,4 @@
-[
+ var data = [
     {
         "losses": "0",
         "division": "1",
@@ -17099,4 +17099,4 @@
             "large": "https://randomuser.me/api/portraits/women/30.jpg"
         }
     }
-]
+];
